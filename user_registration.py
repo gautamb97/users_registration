@@ -43,9 +43,20 @@ class Registration:
         else:
             return "invalid mobile number"
 
+    def passwordruleone(self):
+        '''takes input from user for password and checks whether it is of 8 character and validate'''
+        eightCharacter = input("Enter your password: ")
+        patternCheckingForEightCharacter = "[a-z]{8,}"
+        matchingForEightCharacter = re.search(patternCheckingForEightCharacter,eightCharacter)
+        if matchingForEightCharacter:
+            return eightCharacter
+        else:
+            return "invalid password"
+
 if __name__== '__main__':
     registration = Registration()
     (registration.firstname())
     (registration.lastName())
     (registration.email())
     (registration.mobilenumber())
+    (registration.passwordruleone())
