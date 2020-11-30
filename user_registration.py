@@ -33,8 +33,19 @@ class Registration:
         else:
             return "invalid email address"
 
+    def mobilenumber(self):
+        '''takes input from user for his/her mobile number and checks validity'''
+        mobileNumber = input("Enter your mobile number: ")
+        patternCheckingForMobileNumber = "^(\+91)?[6-9]{1}[0-9]{9}$"
+        matchingForMobileNumber = re.search(patternCheckingForMobileNumber,mobileNumber)
+        if matchingForMobileNumber:
+            return mobileNumber
+        else:
+            return "invalid mobile number"
+
 if __name__== '__main__':
     registration = Registration()
     (registration.firstname())
     (registration.lastName())
     (registration.email())
+    (registration.mobilenumber())
