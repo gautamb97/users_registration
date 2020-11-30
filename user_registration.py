@@ -23,7 +23,18 @@ class Registration:
         else:
             return "invalid last name"
 
+    def email(self):
+        '''takes input from user and check email validation includes domain and valid format'''
+        email = input("Enter your email address: ")
+        patternCheckingForEmail = "^[a-z]*\@[a-z]*\.(com|org|com\.co|com\.edu)"
+        matchingForEmail = re.search(patternCheckingForEmail,email)
+        if matchingForEmail:
+            return email
+        else:
+            return "invalid email address"
+
 if __name__== '__main__':
     registration = Registration()
     (registration.firstname())
     (registration.lastName())
+    (registration.email())
