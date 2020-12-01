@@ -49,9 +49,9 @@ class Registration:
         patternCheckingForOneUpperCase = "^(?=.*[a-z])(?=.*[A-Z])(?=.{8,})"
         matchingForEightCharacter = re.search(patternCheckingForOneUpperCase,oneUpperCase)
         if matchingForEightCharacter:
-            print(oneUpperCase)
+            return oneUpperCase
         else:
-            print("invalid password")
+            return "invalid password"
 
 
 if __name__== '__main__':
