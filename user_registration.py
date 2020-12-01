@@ -26,7 +26,7 @@ class Registration:
     def email(self):
         '''takes input from user and check email validation includes domain and valid format'''
         email = input("Enter your email address: ")
-        patternCheckingForEmail = "^[a-z]*\@[a-z]*\.(com|org|com\.co|com\.edu)"
+        patternCheckingForEmail = "^[a-z0-9\.\_\-\+a-z0-9]*\@[a-z0-9]*\.(com|org|in|co|net|com\.au|com\.com)$"
         matchingForEmail = re.search(patternCheckingForEmail,email)
         if matchingForEmail:
             return email
@@ -50,9 +50,9 @@ class Registration:
         patternCheckingForOneSpecialCharacter = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@]{1})(?=.{8,})"
         matchingForEightCharacter = re.search(patternCheckingForOneSpecialCharacter,oneSpecialCharacter)
         if matchingForEightCharacter:
-            print(oneSpecialCharacter)
+            return oneSpecialCharacter
         else:
-            print("invalid password")
+            return "invalid password"
 
 
 if __name__== '__main__':
