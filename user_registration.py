@@ -43,16 +43,16 @@ class Registration:
         else:
             return "invalid mobile number"
 
-    def passwordrulethree(self):
+    def passwordrulefour(self):
         '''takes input from user for password and checks whether it is of 8 character and at least have one uppercase letter
-        and have at least one numeric value'''
-        oneNumericValue = input("Enter your password: ")
-        patternCheckingForOneNumericValue = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})"
-        matchingForEightCharacter = re.search(patternCheckingForOneNumericValue,oneNumericValue)
+        and have at least one numeric value and one special character'''
+        oneSpecialCharacter = input("Enter your password: ")
+        patternCheckingForOneSpecialCharacter = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@]{1})(?=.{8,})"
+        matchingForEightCharacter = re.search(patternCheckingForOneSpecialCharacter,oneSpecialCharacter)
         if matchingForEightCharacter:
-            return oneNumericValue
+            print(oneSpecialCharacter)
         else:
-            return "invalid password"
+            print("invalid password")
 
 
 if __name__== '__main__':
@@ -61,4 +61,4 @@ if __name__== '__main__':
     (registration.lastName())
     (registration.email())
     (registration.mobilenumber())
-    (registration.passwordrulethree())
+    (registration.passwordrulefour())
